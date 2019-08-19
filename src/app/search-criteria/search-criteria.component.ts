@@ -14,8 +14,8 @@ export class SearchCriteriaComponent implements OnInit {
   ngOnInit() {}
 
   getData(searchTerm: string): void {
-    this.tmdbService.getMovieData(searchTerm).subscribe(response =>
-      this.movieData = response.data);
+ this.tmdbService.getMovieData(searchTerm).subscribe(response =>
+      this.movieData = response['results']);
       console.log(this.movieData);
     };
   }
