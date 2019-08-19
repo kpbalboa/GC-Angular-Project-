@@ -1,0 +1,7 @@
+<p>search-criteria works!</p>
+
+<form #form="ngForm" (submit)="getData(form.value.searchTerm)">
+<input type="text" name="searchTerm" ngModel/>
+</form>
+
+<div *ngFor="let movie of movieData"></div>
