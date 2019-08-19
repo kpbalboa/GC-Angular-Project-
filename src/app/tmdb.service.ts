@@ -10,6 +10,7 @@ export class TmdbService {
   constructor(private http: HttpClient) { }
 
 getMovieData(searchTerm: string): Observable<any>{
-  return this.http.get(`https://api.themoviedb.org/3/movie/550?api_key=964781403df38499570b6f7233c0a524`);
+  return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=964781403df38499570b6f7233c0a524&query=${searchTerm}
+  `);
 }
 }
