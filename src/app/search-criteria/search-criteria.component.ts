@@ -30,10 +30,4 @@ export class SearchCriteriaComponent implements OnInit {
         console.log(this.movieData);
       });
   }
-
-  searchMovie(searchTerm: string): void {
-    this.tmdbService
-      .getTitleData(searchTerm)
-      .subscribe(response => (this.movieData = response["results"]));
-  }
 }
