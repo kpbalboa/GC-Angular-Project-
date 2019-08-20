@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { TmdbService } from '../tmdb.service';
+import { Component, OnInit } from "@angular/core";
+import { TmdbService } from "../tmdb.service";
 import { Observable } from "rxjs";
 import { HttpClient } from '@angular/common/http'
 
 
 @Component({
-  selector: 'app-search-criteria',
-  templateUrl: './search-criteria.component.html',
-  styleUrls: ['./search-criteria.component.css']
+  selector: "app-search-criteria",
+  templateUrl: "./search-criteria.component.html",
+  styleUrls: ["./search-criteria.component.css"]
 })
 
 export class SearchCriteriaComponent implements OnInit {
+
   constructor(private tmdbService: TmdbService, private http: HttpClient) { }
   
   movieData:any;
@@ -27,12 +28,13 @@ export class SearchCriteriaComponent implements OnInit {
   });
 }
 
+
   getData(name: string, greaterThanOrLessThan: string, runTime: number, popularity: string): void {
     console.log(name)
     this.tmdbService.getMovieData(name, greaterThanOrLessThan, runTime, popularity).subscribe(response => {
     this.movieData = response.results;
       console.log(this.movieData);
     });
-  }
 
+  }
 }

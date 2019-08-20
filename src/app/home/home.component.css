@@ -1,0 +1,29 @@
+body {
+  background: #a99b9b;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+header {
+  background: #504545;
+  color: #fff;
+  height: 80px;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#movie {
+  padding-right: 10px;
+}

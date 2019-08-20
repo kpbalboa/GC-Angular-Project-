@@ -7,11 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { WatchListPageComponent } from './watch-list-page/watch-list-page.component';
-// import { from } from 'rxjs';
 import { TmdbService } from './tmdb.service';
-// import { watch } from 'fs';
 import {HttpClientModule} from '@angular/common/http'
-import { from } from 'rxjs';
 
 const appRoutes: Routes=[
   {path:"Movie-List", component: MovieListComponent},
