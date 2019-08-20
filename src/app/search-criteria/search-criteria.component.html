@@ -1,52 +1,51 @@
-
-<h2 id="searchFilter">Filter Your Search</h2>
-
-<form #form="ngForm" (ngSubmit)="getData(form.value.name,form.value.greaterOrLessThan,form.value.runTime,form.value.popularity )">
-<select name="name" ngModel>
-    <option *ngFor='let genre of this.genres' value="{{genre.id}}">{{genre.name}}</option>
-</select>
-<select name='greaterOrLessThan' ngModel>
-    <option value="gte" >Greater Than</option>
-    <option value="lte" >Less Than</option>
-</select>
-<input type="text" name="runTime" ngModel/>
-<select name='popularity' ngModel>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-    </select>
-    <button>submit</button>
+<form
+  #form="ngForm"
+  (ngSubmit)="
+    getData(
+      form.value.name,
+      form.value.greaterOrLessThan,
+      form.value.runTime,
+      form.value.popularity
+    )
+  "
+>
+  <h2 id="searchFilter">Filter Your Search</h2>
+  <select name="name" ngModel>
+    <option *ngFor="let genre of this.genres" value="{{ genre.id }}">{{
+      genre.name
+    }}</option>
+  </select>
+  <select name="greaterOrLessThan" ngModel>
+    <option value="gte">Greater Than</option>
+    <option value="lte">Less Than</option>
+  </select>
+  <input type="text" name="runTime" placeholder="Run Time" ngModel />
+  <select name="popularity" ngModel>
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+  <button>Submit</button>
 </form>
-
-<p>Search for Movie by Title</p>
 
 <form
   #formSearchTitle="ngForm"
   (submit)="searchMovie(formSearchTitle.value.searchTerm)"
 >
-
+  <h2>Search for Movie by Title</h2>
   <input
     type="text"
     name="searchTerm"
-    placeholder="enter movie title"
+    placeholder="Enter movie title"
     ngModel
   />
-  <div *ngFor="let movie of movieData">
-    <a routerLink="/details/{{ movie.id }}">
-      <img
-        src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
-          movie.poster_path
-        }}"
-      />
-    </a>
-  </div>
+  <button>Submit</button>
 </form>
-
-<a href="default.asp">
-  <img
-    src="smiley.gif"
-    alt="HTML tutorial"
-    style="width:42px;height:42px;border:0;"
-  />
-</a>
-
-
+<div *ngFor="let movie of movieData">
+  <a routerLink="/details/{{ movie.id }}">
+    <img
+      src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
+        movie.poster_path
+      }}"
+    />
+  </a>
+</div>
