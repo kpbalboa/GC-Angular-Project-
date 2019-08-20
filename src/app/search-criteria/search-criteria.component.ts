@@ -13,7 +13,7 @@ export class SearchCriteriaComponent implements OnInit {
 
   ngOnInit() {}
 
-  getData(searchTerm: string): void {
+  searchMovie(searchTerm: string): void {
     this.tmdbService
       .getMovieData(searchTerm)
       .subscribe(response => (this.movieData = response["results"]));
