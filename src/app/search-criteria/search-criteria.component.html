@@ -1,4 +1,19 @@
-<h2 id="searchFilter">Filter Your Search</h2>
+<form
+  #formSearchTitle="ngForm"
+  (submit)="searchMovie(formSearchTitle.value.searchTerm)"
+>
+  <h2>Search for Movie by Title</h2>
+  <input type="text" name="searchTerm" placeholder="movie title" ngModel />
+  <button>Submit</button>
+  <div *ngFor="let movie of movieData">
+    <img
+      src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
+        movie.poster_path
+      }}"
+    />
+  </div>
+</form>
+
 <form
   #form="ngForm"
   (submit)="
@@ -10,6 +25,7 @@
     )
   "
 >
+  <h2 id="searchFilter">Filter Your Search</h2>
   <input type="text" name="genre" placeholder="genre" ngModel />
   <select name="greaterOrLessThan" ngModel>
     <option value="gte">Greater Than</option>
@@ -20,7 +36,5 @@
     <option value="asc">Ascending</option>
     <option value="desc">Descending</option>
   </select>
-  <button>submit</button>
+  <button>Submit</button>
 </form>
-
-<router-outlet></router-outlet>
