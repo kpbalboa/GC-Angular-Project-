@@ -15,8 +15,6 @@ getMovieData(genre: string, greaterThanOrLessThan: string, runTime: number, popu
   `);
 }
 
-}
-// /discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc
 
 getTitleData(searchTerm: string): Observable<any> {
     console.log(searchTerm);
@@ -24,3 +22,4 @@ getTitleData(searchTerm: string): Observable<any> {
       .get(`https://api.themoviedb.org/3/search/movie?api_key=15e5712ff47e4688d1f70d94261a6c5d&query=${searchTerm}
   `);
   }
+}

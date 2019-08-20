@@ -1,28 +1,38 @@
-<form #form="ngForm" (submit)="getData(form.value.genre,form.value.greaterOrLessThan,form.value.runTime,form.value.popularity )">
-<input type="text" name="genre" ngModel/>
-<select name='greaterOrLessThan' ngModel>
-    <option value="gte" >Greater Than</option>
-    <option value="lte" >Less Than</option>
-</select>
-<input type="text" name="runTime" ngModel/>
-<select name='popularity' ngModel>
-        <option value="asc" >Ascending</option>
-        <option value="desc" >Descending</option>
-    </select>
-    <button>submit</button>
-
+<form
+  #form="ngForm"
+  (submit)="
+    getData(
+      form.value.genre,
+      form.value.greaterOrLessThan,
+      form.value.runTime,
+      form.value.popularity
+    )
+  "
+>
+  <input type="text" name="genre" ngModel />
+  <select name="greaterOrLessThan" ngModel>
+    <option value="gte">Greater Than</option>
+    <option value="lte">Less Than</option>
+  </select>
+  <input type="text" name="runTime" ngModel />
+  <select name="popularity" ngModel>
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+  <button>submit</button>
 </form>
 
-<p><strong>Search for Movie by Title<strong></p>
+<p>Search for Movie by Title</p>
 <form
   #formSearchTitle="ngForm"
   (submit)="searchMovie(formSearchTitle.value.searchTerm)"
 >
   <input type="text" name="searchTerm" placeholder="movie title" ngModel />
-<div *ngFor="let movie of movieData">
-  <img
-    src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
-      movie.poster_path
-    }}"
-  />
-</div>
+  <div *ngFor="let movie of movieData">
+    <img
+      src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
+        movie.poster_path
+      }}"
+    />
+  </div>
+</form>
