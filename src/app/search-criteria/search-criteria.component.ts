@@ -1,39 +1,40 @@
 import { Component, OnInit } from "@angular/core";
 import { TmdbService } from "../tmdb.service";
 import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http'
+
 
 @Component({
   selector: "app-search-criteria",
   templateUrl: "./search-criteria.component.html",
   styleUrls: ["./search-criteria.component.css"]
 })
+
 export class SearchCriteriaComponent implements OnInit {
-  constructor(private tmdbService: TmdbService) {}
-  movieData: any;
 
-  ngOnInit() {}
+  constructor(private tmdbService: TmdbService, private http: HttpClient) { }
+  
+  movieData:any;
+  genres: any[];
+  name: string;
+  getGenres(): Observable<any>{
+      return this.http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=964781403df38499570b6f7233c0a524&language=en-US`);
+      }
+  ngOnInit() {
+    
+  this.getGenres().subscribe(response => {this.genres=response.genres
+      console.log(this.genres)
 
-  getData(
-    genre: string,
-    greaterThanOrLessThan: string,
-    runTime: number,
-    popularity: string
-  ): void {
-    console.log(genre);
-    console.log(greaterThanOrLessThan);
-    console.log(runTime);
-    console.log(popularity);
-    this.tmdbService
-      .getMovieData(genre, greaterThanOrLessThan, runTime, popularity)
-      .subscribe(response => {
-        this.movieData = response["results"];
-        console.log(this.movieData);
-      });
-  }
+  });
+}
 
-  searchMovie(searchTerm: string): void {
-    this.tmdbService
-      .getTitleData(searchTerm)
-      .subscribe(response => (this.movieData = response["results"]));
+
+  getData(name: string, greaterThanOrLessThan: string, runTime: number, popularity: string): void {
+    console.log(name)
+    this.tmdbService.getMovieData(name, greaterThanOrLessThan, runTime, popularity).subscribe(response => {
+    this.movieData = response.results;
+      console.log(this.movieData);
+    });
+
   }
 }

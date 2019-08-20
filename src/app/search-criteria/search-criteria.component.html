@@ -1,25 +1,19 @@
-<form
-  #form="ngForm"
-  (submit)="
-    getData(
-      form.value.genre,
-      form.value.greaterOrLessThan,
-      form.value.runTime,
-      form.value.popularity
-    )
-  "
->
-  <input type="text" name="genre" placeholder="genre" ngModel />
-  <select name="greaterOrLessThan" ngModel>
-    <option value="gte">Greater Than</option>
-    <option value="lte">Less Than</option>
-  </select>
-  <input type="text" name="runTime" placeholder="run time" ngModel />
-  <select name="popularity" ngModel>
-    <option value="asc">Ascending</option>
-    <option value="desc">Descending</option>
-  </select>
-  <button>submit</button>
+<h2 id="searchFilter">Filter Your Search</h2>
+
+<form #form="ngForm" (ngSubmit)="getData(form.value.name,form.value.greaterOrLessThan,form.value.runTime,form.value.popularity )">
+<select name="name" ngModel>
+    <option *ngFor='let genre of this.genres' value="{{genre.id}}">{{genre.name}}</option>
+</select>
+<select name='greaterOrLessThan' ngModel>
+    <option value="gte" >Greater Than</option>
+    <option value="lte" >Less Than</option>
+</select>
+<input type="text" name="runTime" ngModel/>
+<select name='popularity' ngModel>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+    </select>
+    <button>submit</button>
 </form>
 
 <p>Search for Movie by Title</p>
@@ -51,3 +45,4 @@
     style="width:42px;height:42px;border:0;"
   />
 </a>
+
