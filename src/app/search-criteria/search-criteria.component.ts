@@ -37,4 +37,9 @@ export class SearchCriteriaComponent implements OnInit {
     });
 
   }
+  searchMovie(searchTerm: string): void {
+    this.tmdbService
+      .getTitleData(searchTerm)
+      .subscribe(response => (this.movieData = response["results"]));
+  }
 }
