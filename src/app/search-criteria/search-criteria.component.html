@@ -1,17 +1,21 @@
 <p>search-criteria works!</p>
 
-<form #form="ngForm" (submit)="getData(form.value.genre,form.value.greaterOrLessThan,form.value.runTime,form.value.popularity )">
-<input type="text" name="genre" ngModel/>
+<form #form="ngForm" (ngSubmit)="getData(form.value.name,form.value.greaterOrLessThan,form.value.runTime,form.value.popularity )">
+<select name="name" ngModel>
+    <option *ngFor='let genre of this.genres' value="{{genre.id}}">{{genre.name}}</option>
+</select>
 <select name='greaterOrLessThan' ngModel>
     <option value="gte" >Greater Than</option>
     <option value="lte" >Less Than</option>
 </select>
 <input type="text" name="runTime" ngModel/>
 <select name='popularity' ngModel>
-        <option value="asc" >Ascending</option>
-        <option value="desc" >Descending</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
     </select>
     <button>submit</button>
 </form>
 
-<div *ngFor="let movie of movieData"></div>
+<!-- <div *ngFor="let movie of movieData">
+    <p>kappa</p>
+</div> -->
