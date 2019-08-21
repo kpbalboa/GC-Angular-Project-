@@ -14,6 +14,7 @@ export class SearchCriteriaComponent implements OnInit {
   movieData: any;
   genres: any[];
   name: string;
+
   getGenres(): Observable<any> {
     return this.http.get(
       `https://api.themoviedb.org/3/genre/movie/list?api_key=964781403df38499570b6f7233c0a524&language=en-US`
@@ -26,6 +27,7 @@ export class SearchCriteriaComponent implements OnInit {
 
     this.getData("", "gte", 0, "desc");
   }
+
   getData(
     name: string,
     greaterThanOrLessThan: string,
@@ -40,9 +42,17 @@ export class SearchCriteriaComponent implements OnInit {
         console.log(this.movieData);
       });
   }
+
   searchMovie(searchTerm: string): void {
     this.tmdbService
       .getTitleData(searchTerm)
       .subscribe(response => (this.movieData = response["results"]));
+  }
+
+  ngOnInit() {
+    this.getGenres().subscribe(response => {
+      this.genres = response.genres;
+      console.log(this.genres);
+    });
   }
 }
