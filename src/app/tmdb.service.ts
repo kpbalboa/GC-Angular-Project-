@@ -10,8 +10,6 @@ export class TmdbService {
   genres: any[];
   watchList = [];
   constructor(private http: HttpClient) {}
-  // genres: any[];
-  // watchList: any[];
   getMovieData(
     name: string,
     greaterThanOrLessThan: string,
