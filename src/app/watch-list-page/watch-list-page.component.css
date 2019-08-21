@@ -1,0 +1,26 @@
+
+button {
+    background: #39ddf4;
+    border-radius: 15px;
+    border-color: #39ddf4;
+    width: 35%;
+    height: 30px;
+  }
+  
+  button:hover {
+    background: white;
+  }
+  
+  input {
+    height: 30px;
+    border-radius: 10px;
+    margin: 0 0 15px 0;
+  }
+  
+  select {
+    margin: 0 0 15px 0;
+  }
+  .grid{
+    display: grid;
+    grid-template: auto/ auto auto auto;
+  }

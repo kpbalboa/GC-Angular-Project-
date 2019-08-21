@@ -15,10 +15,17 @@ showDetails(movieID: number): void {
   this.tmdbService
     .getDetails(movieID)
     .subscribe(response => (this.movieData = response));
+    
 }
 
   ngOnInit() {
     console.log(this.activatedRoute.snapshot.paramMap.get("id"));
     this.showDetails(Number(this.activatedRoute.snapshot.paramMap.get("id")));
+   console.log(this.movieData)
+  }
+  addToWatchList(){
+    this.tmdbService.getNewWatchList(this.movieData)
+
   }
 }
+

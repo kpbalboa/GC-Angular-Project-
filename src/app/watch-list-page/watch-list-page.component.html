@@ -1,8 +1,19 @@
-<main>
+<!-- <main>
   <h1>Your Watchlist</h1>
   <section id="watchlist">
     <div></div>
   </section>
 </main>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<div class="grid">
+  <div *ngFor="let movie of watchList" >
+    <a routerLink="/details/{{ movie.id }}">
+      <img
+        src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
+          movie.poster_path
+        }}"
+      />
+    </a>
+  </div>
+  </div>

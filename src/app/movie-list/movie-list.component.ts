@@ -11,9 +11,9 @@ export class MovieListComponent implements OnInit {
   movieData: any;
 
   ngOnInit() {}
-  searchMovie(searchTerm: string): void {
-    this.tmdbService
-      .getTitleData(searchTerm)
-      .subscribe(response => (this.movieData = response["results"]));
-  }
+  // searchMovie(searchTerm: string): void {
+  //   this.tmdbService
+  //     .getTitleData(searchTerm)
+  //     .subscribe(response => (this.movieData = response["results"]));
+  // }
 }
