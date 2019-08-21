@@ -1,15 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { WatchListPageComponent } from './watch-list-page/watch-list-page.component';
+import { WatchListPageComponent } from "./watch-list-page/watch-list-page.component";
 
 @Injectable({
   providedIn: "root"
 })
-
 export class TmdbService {
   genres: any[];
-   watchList=[];
+  watchList = [];
   constructor(private http: HttpClient) {}
   // genres: any[];
   // watchList: any[];
@@ -33,16 +32,14 @@ export class TmdbService {
     return this.http
       .get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=15e5712ff47e4688d1f70d94261a6c5d&language=en-US
       `);
-      
   }
-  getNewWatchList(movie):void{
-    console.log(movie);
-    this.watchList.push(movie)
-    
+  getNewWatchList(movie): void {
+    this.watchList.push(movie);
   }
-  getWatchList(){
+  getWatchList() {
     return this.watchList;
   }
-  
-  
+  onRemoveHandler(index): void {
+    this.watchList.splice(index, 1);
+  }
 }
