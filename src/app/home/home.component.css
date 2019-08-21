@@ -13,20 +13,35 @@ header {
   background: #504545;
   color: #fff;
   height: 80px;
+  text-align: center;
 }
 
 h1 {
   margin: 0;
+  padding: 5px;
 }
 
 a {
   text-decoration: none;
   color: #fff;
+  margin: 5px;
+  padding: 2px;
 }
 
 #movie {
   padding-right: 10px;
 }
 
+.active {
+  color: #b7f1fc;
+  border: 2px dashed white;
+}
 
-
+footer {
+  background: #504545;
+  position: fixed;
+  bottom: 0px;
+  color: white;
+  width: 100%;
+  text-align: end;
+}

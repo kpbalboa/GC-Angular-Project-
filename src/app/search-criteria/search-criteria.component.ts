@@ -47,5 +47,5 @@ export class SearchCriteriaComponent implements OnInit {
       .subscribe(response => (this.movieData = response["results"]));
   }
 
-  }
+}
 
