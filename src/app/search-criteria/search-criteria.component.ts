@@ -34,12 +34,10 @@ export class SearchCriteriaComponent implements OnInit {
     runTime: number,
     popularity: string
   ): void {
-    console.log(name);
     this.tmdbService
       .getMovieData(name, greaterThanOrLessThan, runTime, popularity)
       .subscribe(response => {
         this.movieData = response.results;
-        console.log(this.movieData);
       });
   }
 
@@ -49,10 +47,5 @@ export class SearchCriteriaComponent implements OnInit {
       .subscribe(response => (this.movieData = response["results"]));
   }
 
-  ngOnInit() {
-    this.getGenres().subscribe(response => {
-      this.genres = response.genres;
-      console.log(this.genres);
-    });
   }
-}
+

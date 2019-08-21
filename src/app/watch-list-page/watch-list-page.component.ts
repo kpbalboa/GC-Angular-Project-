@@ -14,12 +14,10 @@ export class WatchListPageComponent implements OnInit {
   constructor(private tmdbService: TmdbService, private http: HttpClient) {}
 
   removeMovie(index: number): void {
-    console.log(index);
     this.tmdbService.onRemoveHandler(index);
   }
 
   ngOnInit() {
     this.watchList = this.tmdbService.getWatchList();
-    console.log(this.watchList);
   }
 }
