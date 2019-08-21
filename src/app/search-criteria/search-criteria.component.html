@@ -11,16 +11,22 @@
 >
   <h2 id="searchFilter">Filter Your Search</h2>
   <select name="name" ngModel>
+      <option value="" disabled selected>Genre</option>
+
     <option *ngFor="let genre of this.genres" value="{{ genre.id }}">{{
       genre.name
     }}</option>
   </select>
   <select name="greaterOrLessThan" ngModel>
+      <option value="" disabled selected>More or Less Than</option>
+
     <option value="gte">Greater Than</option>
     <option value="lte">Less Than</option>
   </select>
   <input type="text" name="runTime" placeholder="Run Time" ngModel />
   <select name="popularity" ngModel>
+      <option value="" disabled selected>Sort popularity</option>
+
     <option value="asc">Ascending</option>
     <option value="desc">Descending</option>
   </select>
