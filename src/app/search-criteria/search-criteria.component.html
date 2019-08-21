@@ -1,4 +1,20 @@
 <form
+  id="search"
+  #formSearchTitle="ngForm"
+  (submit)="searchMovie(formSearchTitle.value.searchTerm)"
+>
+  <!-- <i class="fas fa-search"></i> -->
+  <input
+    id="searchInput"
+    type="text"
+    name="searchTerm"
+    placeholder="Search by movie title..."
+    ngModel
+  />
+</form>
+
+<form
+  id="filter"
   #form="ngForm"
   (ngSubmit)="
     getData(
@@ -19,7 +35,13 @@
     <option value="gte">Greater Than</option>
     <option value="lte">Less Than</option>
   </select>
-  <input type="text" name="runTime" placeholder="Run Time" ngModel />
+  <input
+    id="filterInput"
+    type="text"
+    name="runTime"
+    placeholder="Run Time"
+    ngModel
+  />
   <select name="popularity" ngModel>
     <option value="asc">Ascending</option>
     <option value="desc">Descending</option>
@@ -27,27 +49,14 @@
   <button>Submit</button>
 </form>
 
-<form
-  #formSearchTitle="ngForm"
-  (submit)="searchMovie(formSearchTitle.value.searchTerm)"
->
-  <h2>Search for Movie by Title</h2>
-  <input
-    type="text"
-    name="searchTerm"
-    placeholder="Enter movie title"
-    ngModel
-  />
-  <button>Submit</button>
-</form>
 <div class="grid">
-<div *ngFor="let movie of movieData" >
-  <a routerLink="/details/{{ movie.id }}">
-    <img
-      src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
-        movie.poster_path
-      }}"
-    />
-  </a>
-</div>
+  <div *ngFor="let movie of movieData">
+    <a routerLink="/details/{{ movie.id }}">
+      <img
+        src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
+          movie.poster_path
+        }}"
+      />
+    </a>
+  </div>
 </div>

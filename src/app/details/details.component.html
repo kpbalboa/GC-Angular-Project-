@@ -1,13 +1,11 @@
-<p>details works!</p>
-
 <div>
   <img
     src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{
       movieData.poster_path
     }}"
   />
-  
- <p> {{ movieData.overview }}</p>
- <!-- <p *ngfor genre of movieData.genres>{{genre.name}}</p> -->
- <button (click)='addToWatchList()'>Add To Watch-List</button>
+
+  <p>{{ movieData.overview }}</p>
+  <!-- <p *ngfor genre of movieData.genres>{{genre.name}}</p> -->
+  <button (click)="addToWatchList()">Add To Watch-List</button>
 </div>
