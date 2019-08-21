@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: "Movie-List", component: MovieListComponent },
   { path: "Watch-List", component: WatchListPageComponent },
   { path: "details/:id", component: DetailsComponent },
-  { path: "", redirectTo: "/Watch-List", pathMatch: "full" }
+  { path: "", redirectTo: "/Movie-List", pathMatch: "full" }
 ];
 
 @NgModule({

@@ -20,7 +20,7 @@ export class TmdbService {
     popularity: string
   ): Observable<any> {
     return this.http
-      .get(`https://api.themoviedb.org/3/discover/movie?api_key=964781403df38499570b6f7233c0a524&language=en-US&with_genres=${name}&with_runtime.${greaterThanOrLessThan}=${runTime}&sort_by=vote_average.${popularity}
+      .get(`https://api.themoviedb.org/3/discover/movie?api_key=964781403df38499570b6f7233c0a524&language=en-US&with_genres=${name}&vote_count.gte=1000&with_runtime.${greaterThanOrLessThan}=${runTime}&sort_by=vote_average.${popularity}
   `);
   }
   getTitleData(searchTerm: string): Observable<any> {
