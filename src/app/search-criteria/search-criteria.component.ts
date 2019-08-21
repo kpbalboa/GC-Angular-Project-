@@ -48,11 +48,4 @@ export class SearchCriteriaComponent implements OnInit {
       .getTitleData(searchTerm)
       .subscribe(response => (this.movieData = response["results"]));
   }
-
-  ngOnInit() {
-    this.getGenres().subscribe(response => {
-      this.genres = response.genres;
-      console.log(this.genres);
-    });
-  }
 }
