@@ -1,3 +1,10 @@
+h1 {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-style: italic;
+}
+
 button {
   background: #39ddf4;
   border-radius: 15px;

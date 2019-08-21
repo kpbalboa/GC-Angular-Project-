@@ -3,5 +3,9 @@ html,
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  background: #b7f1fc;
+  /* background: #b7f1fc; */
+  background-image: url("assets/theatrebackground.jpg");
+  /* background-repeat: no-repeat; */
+  background-size: 100vh;
+  background-size: 100vw;
 }
