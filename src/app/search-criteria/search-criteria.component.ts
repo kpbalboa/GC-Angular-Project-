@@ -20,6 +20,13 @@ export class SearchCriteriaComponent implements OnInit {
       `https://api.themoviedb.org/3/genre/movie/list?api_key=964781403df38499570b6f7233c0a524&language=en-US`
     );
   }
+  ngOnInit() {
+    this.getGenres().subscribe(response => {
+      this.genres = response.genres;
+    });
+
+    this.getData("", "gte", 0, "desc");
+  }
 
   getData(
     name: string,

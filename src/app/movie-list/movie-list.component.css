@@ -18,6 +18,7 @@ button {
   border-radius: 5px;
   border-color: #39ddf4;
   width: 25%;
+  align-self: center;
 }
 
 input {
