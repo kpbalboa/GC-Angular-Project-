@@ -10,7 +10,7 @@ nav {
 }
 
 header {
-  background: #504545;
+  background: black;
   color: #fff;
   height: 80px;
   text-align: center;
@@ -33,12 +33,12 @@ a {
 }
 
 .active {
-  color: #b7f1fc;
-  border: 2px dashed white;
+  color: yellow;
+  border: 2px dashed red;
 }
 
 footer {
-  background: #504545;
+  background: black;
   position: fixed;
   bottom: 0px;
   color: white;

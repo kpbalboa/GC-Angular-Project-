@@ -1,7 +1,11 @@
-div{
-    display: flex;
+div {
+  display: flex;
 }
-button{
-    height: 50px;
-    margin-top: 200px;
+button {
+  height: 50px;
+  margin-top: 200px;
+}
+
+p {
+  color: white;
 }
