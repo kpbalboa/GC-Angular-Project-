@@ -45,4 +45,5 @@ select {
 .grid {
   display: grid;
   grid-template: auto/ auto auto auto;
+  margin-bottom: 60px;
 }
